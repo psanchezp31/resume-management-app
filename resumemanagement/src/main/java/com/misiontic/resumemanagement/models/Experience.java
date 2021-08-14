@@ -8,14 +8,16 @@ public class Experience {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "experience_id", nullable = false)
+    @Column(name = "experienceId", nullable = false)
     private long experienceId;
     private String rol;
     private LocalDate endDate;
     private String company;
     private String responsabilities;
     private String achivements;
-
+    @ManyToOne
+    @JoinColumn(name="personId", nullable=false)
+    private Person person;
 
     public Experience(long experienceId, String rol, LocalDate endDate, String company, String responsibilities, String achievements) {
         this.experienceId = experienceId;

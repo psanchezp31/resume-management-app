@@ -1,11 +1,15 @@
 package com.misiontic.resumemanagement.controllers;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
+import com.misiontic.resumemanagement.repositories.PersonRepository;
 
 public class PersonController {
+
+    private final PersonRepository personRepository;
+
+
+    public PersonController(PersonRepository personRepository) {
+        this.personRepository = personRepository;
+    }
+
 
 }

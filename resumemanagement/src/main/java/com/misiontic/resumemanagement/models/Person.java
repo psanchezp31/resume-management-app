@@ -1,16 +1,17 @@
 package com.misiontic.resumemanagement.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "person_id", nullable = false)
+    @Column(name = "personId", nullable = false)
     private long personId;
     private String fullname;
-    private int age; //mejor string o byte
+    private int age;
     private String phone;
     private String city;
     private String email;
@@ -19,7 +20,18 @@ public class Person {
     private String githubProfile;
     private String linkedinProfile;
 
-    public Person(long personId, String fullname, int age, String phone, String city, String email, String ocupation,
+
+    @OneToMany(mappedBy = "person")
+    private List<Education> educationList;
+
+    @OneToMany(mappedBy = "person")
+    private List<Experience> experienceList;
+
+    @OneToMany(mappedBy = "person")
+    private List<SoftSkill> softSkillList;
+
+
+    public Person(long personId, String fullname, int age, String phone, String city, String email, String occupation,
                   String description, String githubProfile, String linkedinProfile) {
         this.personId = personId;
         this.fullname = fullname;
@@ -27,7 +39,7 @@ public class Person {
         this.phone = phone;
         this.city = city;
         this.email = email;
-        this.occupation = ocupation;
+        this.occupation = occupation;
         this.description = description;
         this.githubProfile = githubProfile;
         this.linkedinProfile = linkedinProfile;
@@ -114,5 +126,13 @@ public class Person {
 
     public void setLinkedinProfile(String linkedinProfile) {
         this.linkedinProfile = linkedinProfile;
+    }
+
+    public List<Education> getEducationList() {
+        return educationList;
+    }
+
+    public void setEducationList(List<Education> educationList) {
+        this.educationList = educationList;
     }
 }

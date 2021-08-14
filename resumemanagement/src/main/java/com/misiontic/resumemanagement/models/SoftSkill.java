@@ -7,11 +7,14 @@ public class SoftSkill {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "soft_skill_id", nullable = false)
+    @Column(name = "softSkillId", nullable = false)
     private long softSkillId;
     private String skills;
     private String hobbies;
     private String languages;
+    @ManyToOne
+    @JoinColumn(name="personId", nullable=false)
+    private Person person;
 
     public SoftSkill(long softSkillId, String skills, String hobbies, String languages) {
         this.softSkillId = softSkillId;

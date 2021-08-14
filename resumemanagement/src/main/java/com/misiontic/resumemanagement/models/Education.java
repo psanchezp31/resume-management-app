@@ -3,19 +3,23 @@ package com.misiontic.resumemanagement.models;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+
 @Entity
 public class Education {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "education_id", nullable = false)
+    @Column(name = "educationId", nullable = false)
     private long educationId;
     private String programName;
     private LocalDate endDate;
     private String institution;
+    @ManyToOne
+    @JoinColumn(name="personId", nullable=false)
+    private Person person;
 
 
-    public Education(long educationId, String programName, LocalDate endDate, String institution) {
+    public Education(long educationId, String programName, LocalDate endDate, String institution, Person person) {
         this.educationId = educationId;
         this.programName = programName;
         this.endDate = endDate;
