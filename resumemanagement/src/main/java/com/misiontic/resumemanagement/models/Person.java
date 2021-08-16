@@ -8,7 +8,7 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "personId", nullable = false)
+    @Column(name = "person_id", nullable = false)
     private long personId;
     private String fullname;
     private int age;
@@ -21,13 +21,13 @@ public class Person {
     private String linkedinProfile;
 
 
-    @OneToMany(mappedBy = "person")
+    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY)
     private List<Education> educationList;
 
-    @OneToMany(mappedBy = "person")
+    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY)
     private List<Experience> experienceList;
 
-    @OneToMany(mappedBy = "person")
+    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY)
     private List<SoftSkill> softSkillList;
 
 
@@ -55,6 +55,7 @@ public class Person {
     public void setPersonId(long personId) {
         this.personId = personId;
     }
+
 
     public String getFullname() {
         return fullname;
@@ -134,5 +135,40 @@ public class Person {
 
     public void setEducationList(List<Education> educationList) {
         this.educationList = educationList;
+    }
+
+    public List<Experience> getExperienceList() {
+        return experienceList;
+    }
+
+    public void setExperienceList(List<Experience> experienceList) {
+        this.experienceList = experienceList;
+    }
+
+    public List<SoftSkill> getSoftSkillList() {
+        return softSkillList;
+    }
+
+    public void setSoftSkillList(List<SoftSkill> softSkillList) {
+        this.softSkillList = softSkillList;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "personId=" + personId +
+                ", fullname='" + fullname + '\'' +
+                ", age=" + age +
+                ", phone='" + phone + '\'' +
+                ", city='" + city + '\'' +
+                ", email='" + email + '\'' +
+                ", occupation='" + occupation + '\'' +
+                ", description='" + description + '\'' +
+                ", githubProfile='" + githubProfile + '\'' +
+                ", linkedinProfile='" + linkedinProfile + '\'' +
+                ", educationalList= " + educationList +
+                ", experienceList= " + experienceList +
+                ", softSkillList= " + softSkillList +
+                '}';
     }
 }

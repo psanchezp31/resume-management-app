@@ -9,17 +9,18 @@ public class Education {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "educationId", nullable = false)
+    @Column(name = "education_id", nullable = false)
     private long educationId;
     private String programName;
     private LocalDate endDate;
     private String institution;
+
     @ManyToOne
-    @JoinColumn(name="personId", nullable=false)
+    @JoinColumn(name="person_id", nullable=false)
     private Person person;
 
 
-    public Education(long educationId, String programName, LocalDate endDate, String institution, Person person) {
+    public Education(long educationId, String programName, LocalDate endDate, String institution) {
         this.educationId = educationId;
         this.programName = programName;
         this.endDate = endDate;
@@ -61,4 +62,13 @@ public class Education {
         this.institution = institution;
     }
 
+    @Override
+    public String toString() {
+        return "Education{" +
+                "educationId=" + educationId +
+                ", programName='" + programName + '\'' +
+                ", endDate=" + endDate +
+                ", institution='" + institution + '\'' +
+                '}';
+    }
 }

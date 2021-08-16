@@ -1,4 +1,5 @@
 package com.misiontic.resumemanagement.models;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,13 +8,13 @@ public class SoftSkill {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "softSkillId", nullable = false)
+    @Column(name = "soft_skill_id", nullable = false)
     private long softSkillId;
     private String skills;
     private String hobbies;
     private String languages;
     @ManyToOne
-    @JoinColumn(name="personId", nullable=false)
+    @JoinColumn(name = "person_id", nullable = false)
     private Person person;
 
     public SoftSkill(long softSkillId, String skills, String hobbies, String languages) {
@@ -59,5 +60,15 @@ public class SoftSkill {
 
     public void setLanguages(String languages) {
         this.languages = languages;
+    }
+
+    @Override
+    public String toString() {
+        return "SoftSkill{" +
+                "softSkillId=" + softSkillId +
+                ", skills='" + skills + '\'' +
+                ", hobbies='" + hobbies + '\'' +
+                ", languages='" + languages + '\'' +
+                '}';
     }
 }

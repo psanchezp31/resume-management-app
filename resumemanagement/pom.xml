@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.misiontic</groupId>
-	<artifactId>resumemanagement</artifactId>
+	<artifactId>resume-management</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
 	<name>resumemanagement</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Microservice for a resume builder</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

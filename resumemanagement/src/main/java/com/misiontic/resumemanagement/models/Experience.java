@@ -8,15 +8,15 @@ public class Experience {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "experienceId", nullable = false)
+    @Column(name = "experience_id", nullable = false)
     private long experienceId;
     private String rol;
     private LocalDate endDate;
     private String company;
-    private String responsabilities;
-    private String achivements;
+    private String responsibilities;
+    private String achievements;
     @ManyToOne
-    @JoinColumn(name="personId", nullable=false)
+    @JoinColumn(name = "person_id", nullable = false)
     private Person person;
 
     public Experience(long experienceId, String rol, LocalDate endDate, String company, String responsibilities, String achievements) {
@@ -24,8 +24,8 @@ public class Experience {
         this.rol = rol;
         this.endDate = endDate;
         this.company = company;
-        this.responsabilities = responsibilities;
-        this.achivements = achievements;
+        this.responsibilities = responsibilities;
+        this.achievements = achievements;
     }
 
     public Experience() {
@@ -63,19 +63,31 @@ public class Experience {
         this.company = company;
     }
 
-    public String getResponsabilities() {
-        return responsabilities;
+    public String getResponsibilities() {
+        return responsibilities;
     }
 
-    public void setResponsabilities(String responsabilities) {
-        this.responsabilities = responsabilities;
+    public void setResponsibilities(String responsabilities) {
+        this.responsibilities = responsabilities;
     }
 
-    public String getAchivements() {
-        return achivements;
+    public String getAchievements() {
+        return achievements;
     }
 
-    public void setAchivements(String achivements) {
-        this.achivements = achivements;
+    public void setAchievements(String achivements) {
+        this.achievements = achivements;
+    }
+
+    @Override
+    public String toString() {
+        return "Experience{" +
+                "experienceId=" + experienceId +
+                ", rol='" + rol + '\'' +
+                ", endDate=" + endDate +
+                ", company='" + company + '\'' +
+                ", responsibilities='" + responsibilities + '\'' +
+                ", achievements='" + achievements + '\'' +
+                '}';
     }
 }
