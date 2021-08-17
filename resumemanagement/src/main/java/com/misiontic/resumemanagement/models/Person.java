@@ -20,14 +20,13 @@ public class Person {
     private String githubProfile;
     private String linkedinProfile;
 
-
-    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Education> educationList;
 
-    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Experience> experienceList;
 
-    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<SoftSkill> softSkillList;
 
 
@@ -166,9 +165,9 @@ public class Person {
                 ", description='" + description + '\'' +
                 ", githubProfile='" + githubProfile + '\'' +
                 ", linkedinProfile='" + linkedinProfile + '\'' +
-                ", educationalList= " + educationList +
-                ", experienceList= " + experienceList +
-                ", softSkillList= " + softSkillList +
+                ", educationList= " + educationList +
+                // ", experienceList= " + experienceList +
+                // ", softSkillList= " + softSkillList +
                 '}';
     }
 }

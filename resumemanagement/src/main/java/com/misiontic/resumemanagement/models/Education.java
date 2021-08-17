@@ -16,9 +16,8 @@ public class Education {
     private String institution;
 
     @ManyToOne
-    @JoinColumn(name="person_id", nullable=false)
+    @JoinColumn(name="person_id")
     private Person person;
-
 
     public Education(long educationId, String programName, LocalDate endDate, String institution) {
         this.educationId = educationId;
@@ -60,6 +59,14 @@ public class Education {
 
     public void setInstitution(String institution) {
         this.institution = institution;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     @Override

@@ -14,7 +14,7 @@ public class SoftSkill {
     private String hobbies;
     private String languages;
     @ManyToOne
-    @JoinColumn(name = "person_id", nullable = false)
+    @JoinColumn(name = "person_id")
     private Person person;
 
     public SoftSkill(long softSkillId, String skills, String hobbies, String languages) {
