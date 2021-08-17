@@ -1,6 +1,6 @@
 package com.misiontic.resumemanagement.controllers;
 
-import com.misiontic.resumemanagement.models.Person;
+import com.misiontic.resumemanagement.dto.PersonDto;
 import com.misiontic.resumemanagement.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +15,9 @@ public class PersonController {
     private PersonService personService;
 
     @GetMapping("/persons")
-    public List<Person> getPersons() {
+    public List<PersonDto> getPersons() {
         return personService.getPersons();
     }
+
+
 }

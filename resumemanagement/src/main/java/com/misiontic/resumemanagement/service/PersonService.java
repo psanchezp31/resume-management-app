@@ -1,5 +1,6 @@
 package com.misiontic.resumemanagement.service;
 
+import com.misiontic.resumemanagement.dto.PersonDto;
 import com.misiontic.resumemanagement.models.Person;
 import com.misiontic.resumemanagement.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PersonService {
@@ -15,8 +17,12 @@ public class PersonService {
     private PersonRepository personRepository;
 
     @Transactional
-    public List<Person> getPersons() {
+    public List<PersonDto> getPersons() {
         List<Person> allPersons = personRepository.findAll();
-        return allPersons;
+
+        return allPersons.stream()
+                .map(PersonDto::fromPerson)
+                .collect(Collectors.toList());
     }
+
 }
