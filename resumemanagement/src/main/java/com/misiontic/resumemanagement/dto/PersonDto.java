@@ -1,6 +1,9 @@
 package com.misiontic.resumemanagement.dto;
 
+import com.misiontic.resumemanagement.models.Education;
 import com.misiontic.resumemanagement.models.Person;
+
+import java.util.List;
 
 public class PersonDto {
 
@@ -14,6 +17,9 @@ public class PersonDto {
     private String description;
     private String githubProfile;
     private String linkedinProfile;
+    private List<EducationDto > educationList;
+    //private List<ExperienceDto> experienceList;
+    //private List<SoftSkillDto> softSkillList;
 
     public static PersonDto fromPerson(Person entityPerson) {
         PersonDto dto = new PersonDto();
@@ -27,6 +33,9 @@ public class PersonDto {
         dto.description = entityPerson.getDescription();
         dto.githubProfile = entityPerson.getGithubProfile();
         dto.linkedinProfile = entityPerson.getLinkedinProfile();
+        //dto.educationList = entityPerson.getEducationList();
+        //dto.experienceList = entityPerson.getExperienceList();
+        //dto.softSkillList = entityPerson.getSoftSkillList();
         return dto;
     }
 
@@ -109,4 +118,28 @@ public class PersonDto {
     public void setLinkedinProfile(String linkedinProfile) {
         this.linkedinProfile = linkedinProfile;
     }
+
+    public List<EducationDto> getEducationList() {
+        return educationList;
+    }
+
+    public void setEducationList(List<EducationDto> educationList) {
+        this.educationList = educationList;
+    }
+
+  /*  public List<ExperienceDto> getExperienceList() {
+        return experienceList;
+    }
+
+    public void setExperienceList(List<ExperienceDto> experienceList) {
+        this.experienceList = experienceList;
+    }
+
+    public List<SoftSkillDto> getSoftSkillList() {
+        return softSkillList;
+    }
+
+    public void setSoftSkillList(List<SoftSkillDto> softSkillList) {
+        this.softSkillList = softSkillList;
+    }*/
 }
