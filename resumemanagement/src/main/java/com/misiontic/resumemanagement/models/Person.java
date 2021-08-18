@@ -166,8 +166,8 @@ public class Person {
                 ", githubProfile='" + githubProfile + '\'' +
                 ", linkedinProfile='" + linkedinProfile + '\'' +
                 ", educationList= " + educationList +
-                // ", experienceList= " + experienceList +
-                // ", softSkillList= " + softSkillList +
+                 ", experienceList= " + experienceList +
+                 ", softSkillList= " + softSkillList +
                 '}';
     }
 }
