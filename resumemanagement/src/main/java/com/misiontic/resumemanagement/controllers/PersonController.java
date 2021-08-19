@@ -1,25 +1,24 @@
 package com.misiontic.resumemanagement.controllers;
 
 import com.misiontic.resumemanagement.dto.PersonDto;
+import com.misiontic.resumemanagement.models.Person;
 import com.misiontic.resumemanagement.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestClientException;
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping(path = "/persons", produces = "application/json")
 public class PersonController {
 
     @Autowired
     private PersonService personService;
 
-    @GetMapping("/persons")
+    @GetMapping()
     public ResponseEntity<List<PersonDto>> getPersons() {
         List<PersonDto> persons = personService.getPersons();
         if (!persons.isEmpty()) {
@@ -29,15 +28,20 @@ public class PersonController {
         }
     }
 
-    @GetMapping("/persons/{personId}")
+    @GetMapping(path = "/{personId}")
     public PersonDto getPersonById(@PathVariable long personId) {
         Optional<PersonDto> optionalPersonDto = personService.getPersonById(personId);
         return optionalPersonDto.orElseThrow(() -> new RuntimeException("Person not found"));
     }
 
+    @PostMapping
+    public ResponseEntity postPerson(@RequestBody PersonDto person) {
+       // Person personEntity = personService.parsePersonDtoToPersonEntity(person);
+        //PersonDto.fromPerson(personEntity);
+        return ResponseEntity.noContent().build();
+    }
 
-
-    @DeleteMapping(path = "/persons/{personId}")
+    @DeleteMapping(path = "/{personId}")
     public ResponseEntity deleteEntry(@PathVariable long personId) {
         personService.deletePerson(personId);
         return ResponseEntity.noContent().build();

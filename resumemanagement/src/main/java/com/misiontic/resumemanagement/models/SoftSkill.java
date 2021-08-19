@@ -62,6 +62,14 @@ public class SoftSkill {
         this.languages = languages;
     }
 
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
     @Override
     public String toString() {
         return "SoftSkill{" +

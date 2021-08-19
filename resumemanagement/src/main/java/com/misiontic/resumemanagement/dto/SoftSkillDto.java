@@ -1,7 +1,5 @@
 package com.misiontic.resumemanagement.dto;
 
-import com.misiontic.resumemanagement.models.SoftSkill;
-
 public class SoftSkillDto {
 
     private long softSkillId;
@@ -9,14 +7,6 @@ public class SoftSkillDto {
     private String hobbies;
     private String languages;
 
-    public static SoftSkillDto fromSoftSkill(SoftSkill softSkillEntity) {
-        SoftSkillDto dto = new SoftSkillDto();
-        dto.softSkillId = softSkillEntity.getSoftSkillId();
-        dto.skills = softSkillEntity.getSkills();
-        dto.hobbies = softSkillEntity.getHobbies();
-        dto.languages = softSkillEntity.getLanguages();
-        return dto;
-    }
 
     public long getSoftSkillId() {
         return softSkillId;

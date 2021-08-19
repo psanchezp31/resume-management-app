@@ -21,30 +21,6 @@ public class PersonDto {
     private List<ExperienceDto> experienceList;
     private List<SoftSkillDto> softSkillList;
 
-    public static PersonDto fromPerson(Person entityPerson) {
-        PersonDto dto = new PersonDto();
-        dto.personId = entityPerson.getPersonId();
-        dto.fullname = entityPerson.getFullname();
-        dto.age = entityPerson.getAge();
-        dto.phone = entityPerson.getPhone();
-        dto.city = entityPerson.getCity();
-        dto.email = entityPerson.getEmail();
-        dto.occupation = entityPerson.getOccupation();
-        dto.description = entityPerson.getDescription();
-        dto.githubProfile = entityPerson.getGithubProfile();
-        dto.linkedinProfile = entityPerson.getLinkedinProfile();
-
-        dto.educationList = entityPerson.getEducationList().stream()
-                .map(EducationDto::fromEducation)
-                .collect(Collectors.toList());
-        dto.experienceList = entityPerson.getExperienceList().stream()
-                .map(ExperienceDto::fromExperience)
-                .collect(Collectors.toList());
-        dto.softSkillList = entityPerson.getSoftSkillList().stream()
-                .map(SoftSkillDto::fromSoftSkill)
-                .collect(Collectors.toList());
-        return dto;
-    }
 
     public long getPersonId() {
         return personId;

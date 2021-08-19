@@ -1,7 +1,5 @@
 package com.misiontic.resumemanagement.dto;
 
-import com.misiontic.resumemanagement.models.Experience;
-
 import java.time.LocalDate;
 
 public class ExperienceDto {
@@ -13,16 +11,6 @@ public class ExperienceDto {
     private String responsibilities;
     private String achievements;
 
-    public static ExperienceDto fromExperience(Experience experienceEntity) {
-        ExperienceDto dto = new ExperienceDto();
-        dto.experienceId = experienceEntity.getExperienceId();
-        dto.rol = experienceEntity.getRol();
-        dto.endDate = experienceEntity.getEndDate();
-        dto.company = experienceEntity.getCompany();
-        dto.responsibilities = experienceEntity.getResponsibilities();
-        dto.achievements = experienceEntity.getAchievements();
-        return dto;
-    }
 
     public long getExperienceId() {
         return experienceId;
