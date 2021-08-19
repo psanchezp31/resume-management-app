@@ -23,6 +23,7 @@ public class ResumeManagementApplication {
 
     @EventListener(ApplicationReadyEvent.class)
     public void runAfterStartup() {
+        logger.info("*** Application Started Successfully ***");
        // testService.testUpdateWithRelatedItems();
     }
 }

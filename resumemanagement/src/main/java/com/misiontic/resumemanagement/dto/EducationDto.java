@@ -3,7 +3,6 @@ package com.misiontic.resumemanagement.dto;
 import com.misiontic.resumemanagement.models.Education;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public class EducationDto {
 
@@ -20,10 +19,6 @@ public class EducationDto {
         dto.institution = educationEntity.getInstitution();
         return dto;
     }
-
-    /*public static List<EducationDto> educationDtoList(EducationDto dto){
-
-    }*/
 
     public long getEducationId() {
         return educationId;

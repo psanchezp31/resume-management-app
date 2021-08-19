@@ -67,16 +67,16 @@ public class Experience {
         return responsibilities;
     }
 
-    public void setResponsibilities(String responsabilities) {
-        this.responsibilities = responsabilities;
+    public void setResponsibilities(String responsibilities) {
+        this.responsibilities = responsibilities;
     }
 
     public String getAchievements() {
         return achievements;
     }
 
-    public void setAchievements(String achivements) {
-        this.achievements = achivements;
+    public void setAchievements(String achievements) {
+        this.achievements = achievements;
     }
 
     @Override

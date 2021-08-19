@@ -36,7 +36,7 @@ public class TestService {
         logger.info("Print update finished.");
     }
 
-    @Transactional
+    /*@Transactional
     public Person createPerson() {
         Person newPerson = new Person();
         newPerson.setFullname("John Doe");
@@ -124,7 +124,7 @@ public class TestService {
         logger.info("Person: " + person);
 
     }
-
+*/
 }
 
 

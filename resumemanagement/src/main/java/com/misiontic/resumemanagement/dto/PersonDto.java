@@ -1,9 +1,9 @@
 package com.misiontic.resumemanagement.dto;
 
-import com.misiontic.resumemanagement.models.Education;
 import com.misiontic.resumemanagement.models.Person;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PersonDto {
 
@@ -17,9 +17,9 @@ public class PersonDto {
     private String description;
     private String githubProfile;
     private String linkedinProfile;
-    private List<EducationDto > educationList;
-    //private List<ExperienceDto> experienceList;
-    //private List<SoftSkillDto> softSkillList;
+    private List<EducationDto> educationList;
+    private List<ExperienceDto> experienceList;
+    private List<SoftSkillDto> softSkillList;
 
     public static PersonDto fromPerson(Person entityPerson) {
         PersonDto dto = new PersonDto();
@@ -33,9 +33,16 @@ public class PersonDto {
         dto.description = entityPerson.getDescription();
         dto.githubProfile = entityPerson.getGithubProfile();
         dto.linkedinProfile = entityPerson.getLinkedinProfile();
-        //dto.educationList = entityPerson.getEducationList();
-        //dto.experienceList = entityPerson.getExperienceList();
-        //dto.softSkillList = entityPerson.getSoftSkillList();
+
+        dto.educationList = entityPerson.getEducationList().stream()
+                .map(EducationDto::fromEducation)
+                .collect(Collectors.toList());
+        dto.experienceList = entityPerson.getExperienceList().stream()
+                .map(ExperienceDto::fromExperience)
+                .collect(Collectors.toList());
+        dto.softSkillList = entityPerson.getSoftSkillList().stream()
+                .map(SoftSkillDto::fromSoftSkill)
+                .collect(Collectors.toList());
         return dto;
     }
 
@@ -127,7 +134,7 @@ public class PersonDto {
         this.educationList = educationList;
     }
 
-  /*  public List<ExperienceDto> getExperienceList() {
+    public List<ExperienceDto> getExperienceList() {
         return experienceList;
     }
 
@@ -141,5 +148,5 @@ public class PersonDto {
 
     public void setSoftSkillList(List<SoftSkillDto> softSkillList) {
         this.softSkillList = softSkillList;
-    }*/
+    }
 }
