@@ -35,14 +35,20 @@ public class PersonService {
         List<Person> allPersons = personRepository.findAll();
 
         return allPersons.stream()
-                .map(PersonMapper::fromPerson)
+                .map(PersonMapper::toPersonDto)
                 .collect(Collectors.toList());
     }
 
     @Transactional
     public Optional<PersonDto> getPersonById(long id) {
         Optional<Person> person = personRepository.findById(id);
-        return person.map(PersonMapper::fromPerson);
+        return person.map(PersonMapper::toPersonDto);
+    }
+
+    @Transactional
+    public Optional<PersonDto> newPerson(PersonDto person) {
+        Optional<PersonDto> personDto = null;  //save to repository
+        return personDto;
     }
 
     @Transactional

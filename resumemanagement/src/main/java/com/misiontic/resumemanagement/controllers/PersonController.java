@@ -1,12 +1,10 @@
 package com.misiontic.resumemanagement.controllers;
 
 import com.misiontic.resumemanagement.dto.PersonDto;
-import com.misiontic.resumemanagement.models.Person;
 import com.misiontic.resumemanagement.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestClientException;
 
 import java.util.List;
 import java.util.Optional;
@@ -36,7 +34,7 @@ public class PersonController {
 
     @PostMapping
     public ResponseEntity postPerson(@RequestBody PersonDto person) {
-       // Person personEntity = personService.parsePersonDtoToPersonEntity(person);
+        // Person personEntity = personService.parsePersonDtoToPersonEntity(person);
         //PersonDto.fromPerson(personEntity);
         return ResponseEntity.noContent().build();
     }
@@ -46,11 +44,6 @@ public class PersonController {
         personService.deletePerson(personId);
         return ResponseEntity.noContent().build();
     }
-
-
-
-
-
 
 
 }

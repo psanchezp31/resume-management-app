@@ -7,18 +7,17 @@ import com.misiontic.resumemanagement.repositories.SoftSkillRepository;
 
 public class SoftSkillMapper {
 
-    public SoftSkill parseSoftSkillDtoToSoftSkillEntity(SoftSkillDto input, Person person, SoftSkillRepository softSkillRepository) {
+    public static SoftSkill toSoftSkillEntity(SoftSkillDto input, Person person) {
         SoftSkill softSkill = new SoftSkill();
         softSkill.setSoftSkillId(input.getSoftSkillId());
         softSkill.setSkills(input.getSkills());
         softSkill.setHobbies(input.getHobbies());
         softSkill.setLanguages(input.getLanguages());
         softSkill.setPerson(person);
-        softSkillRepository.save(softSkill);
         return softSkill;
     }
 
-    public static SoftSkillDto fromSoftSkill(SoftSkill softSkillEntity) {
+    public static SoftSkillDto toSoftSkillDto(SoftSkill softSkillEntity) {
         SoftSkillDto dto = new SoftSkillDto();
         dto.setSoftSkillId(softSkillEntity.getSoftSkillId());
         dto.setSkills(softSkillEntity.getSkills());

@@ -1,9 +1,6 @@
 package com.misiontic.resumemanagement.dto;
 
-import com.misiontic.resumemanagement.models.Person;
-
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class PersonDto {
 

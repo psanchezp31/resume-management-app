@@ -3,11 +3,10 @@ package com.misiontic.resumemanagement.mappers;
 import com.misiontic.resumemanagement.dto.ExperienceDto;
 import com.misiontic.resumemanagement.models.Experience;
 import com.misiontic.resumemanagement.models.Person;
-import com.misiontic.resumemanagement.repositories.ExperienceRepository;
 
 public class ExperienceMapper {
 
-    public Experience parseExperienceDtoToExperienceEntity(ExperienceDto input, Person person, ExperienceRepository experienceRepository) {
+    public static Experience toExperienceEntity(ExperienceDto input, Person person) {
         Experience experience = new Experience();
         experience.setExperienceId(input.getExperienceId());
         experience.setRol(input.getRol());
@@ -16,11 +15,10 @@ public class ExperienceMapper {
         experience.setResponsibilities(input.getResponsibilities());
         experience.setAchievements(input.getAchievements());
         experience.setPerson(person);
-        experienceRepository.save(experience);
         return experience;
     }
 
-    public static ExperienceDto fromExperience(Experience experienceEntity) {
+    public static ExperienceDto toExperienceDto(Experience experienceEntity) {
         ExperienceDto dto = new ExperienceDto();
         dto.setExperienceId(experienceEntity.getExperienceId());
         dto.setRol(experienceEntity.getRol());
