@@ -1,0 +1,21 @@
+.title{
+    text-align: center;
+    padding: 1%;
+}
+
+.col{
+    text-align: center;
+    max-width: 30%;
+    margin: auto;
+    margin-top: 4%;
+}
+
+.title2{
+    margin-top: 5%;
+    font-size: medium;
+}
+
+.footer1{
+    text-align: center;
+    margin-top: 5%;
+}
