@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+}
+
+/*Home Styles*/
+
+.home-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: #eee;
+}
+
+.main-page-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.image-login {
+  display: flex;
+  width: 50%;
+  border-radius: 20px;
+  margin-left: 30px;
+}
+
+.login-container {
+  width: 50%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 100px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+}
+
+#title {
+  height: 160px;
+  flex-direction: column;
+  padding: 20px;
+  display: flex;
+  color: #000;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#quantum-name {
+  color: white;
+  background: red;
+  font-size: 90px;
+  font-weight: 800;
+  letter-spacing: -0.09em;
+}
+
+h2 {
+  color: #000;
+  padding-top: 50px;
+  font-size: 22px;
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 1rem 1rem;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 3.3px solid rgba(230, 230, 230, 0.85);
+}
+
+#login-button {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: #fdd402;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/*Header Bar Styles*/
+
+.header-info-bar-container {
+  width: 100%;
+  position: fixed;
+  height: 60px;
+  background-color: #000;
+  top: 0;
+  left: 0;
+}
+
+#header-bar-items {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  color: #ccc;
+}
+
+.user {
+  display: flex;
+  font-size: 18px;
+  margin: 30px;
+  font-weight: 700;
+  color: red;
+}
+
+.left-side {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  font-size: 25px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.right-side {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+/*Dashboard, Tabs styles*/
+
+.dashboard-container {
+  width: auto;
+  height: 500px;
+  background-color: rgba(230, 230, 230, 0.65);
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+}
+
+.tab-list {
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+}
+
+.tab-list-item {
+  display: inline-block;
+  list-style: none;
+  margin-bottom: -1px;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+}
+
+.tab-list-active {
+  background-color: white;
+  border: solid #ccc;
+  border-width: 1px 1px 0 1px;
+}
+
+table,
+th,
+td {
+  border: 1px solid rgb(184, 184, 184);
+  border-collapse: collapse;
+}
+
+table {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+td {
+  font-size: 13px;
+  height: 30px;
+}
+
+tbody {
+  display: block;
+  max-height: 300px;
+}
+
+table thead,
+table tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+td button {
+  border: none;
+  cursor: pointer;
+}
+
+#tbody-categoriesTab {
+  overflow-y: hidden;
+}
+
+/*Maintenance styles*/
+
+.maintenance-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fdd402;
+  width: 100%;
+  height: 100vh;
+}
+
+.maintenance-message {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 700;
+  padding-bottom: 40px;
+  line-height: 60px;
+}
+
+.maintenance-image img {
+  width: 100%;
+  height: 300px;
+}
+
+.button-container .logout-button {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.logout-button {
+  background-color: black;
+  color: #fdd402;
+  border: 1px solid #fdd402;
+  border-radius: 10px;
+  width: 100px;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  margin-left: 20px;
+}
